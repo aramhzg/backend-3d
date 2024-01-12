@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ### Posgres database for Inventory
+  db-general:
+    container_name: db-general
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_general
+      POSTGRES_USER: uncledave
+      POSTGRES_PASSWORD: Test123
+    ports:
+      - 5431:5431
+    expose:
+      - 5431
+    command: -p 5431
